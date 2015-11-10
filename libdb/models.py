@@ -5,7 +5,7 @@ class Author(models.Model):
     AuthorId = models.IntegerField(primary_key=True)
     Name = models.CharField(max_length=50)
     Age = models.IntegerField()
-    Country = models.CharField(max_length=20)
+    Country = models.CharField(max_length=50)
 
     def __unicode__(self):
         return u"%d %s %d %s"%(self.AuthorId,self.Name,self.Age,self.Country)
@@ -14,8 +14,8 @@ class Book(models.Model):
     ISBN = models.IntegerField(primary_key=True)
     Title = models.CharField(max_length=50)
     AuthorId = models.ForeignKey(Author)
-    publisher = models.CharField(max_length=50)
-    Publishdata = models.DateField(max_length=50)
+    Publisher = models.CharField(max_length=50)
+    Publishdate = models.DateField(max_length=50)
     Price = models.FloatField()
 
     def __unicode__(self):

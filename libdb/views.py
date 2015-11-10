@@ -19,12 +19,8 @@ def search(request):
         bid=Author.objects.filter(Name=q)
         #print bid
         ge=Book.objects.filter(AuthorId=bid)
-        if(ge.__len__()==0):
-           # print bid.__len__()
-            return HttpResponse("please submit a term")
-        else:
-            c=Context({"list":ge})
-            return c
+        c=Context({"list":ge})
+        return c
     else:
         return HttpResponse("please submit a term")
 
